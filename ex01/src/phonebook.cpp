@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 17:51:07 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/16 17:51:08 by evallee-         ###   ########.fr       */
+/*   Created: 2023/11/16 17:28:41 by evallee-          #+#    #+#             */
+/*   Updated: 2023/11/16 17:48:59 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstring>
+#include "phonebook.hpp"
 
-int	main(int argc, char **argv)
+Phonebook::Phonebook()
 {
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	argv++;
-	while (*argv)
-	{
-		std::string arg = *argv;
-		std::transform(arg.begin(), arg.end(), arg.begin(), toupper);
-		std::cout << arg;
-		argv++;
-	}
-	putchar('\n');
-	return (0);
+	std::cout << "constructor\n";
+}
+
+Phonebook::~Phonebook()
+{
+	std::cout << "destructor\n";
+}
+
+void	Phonebook::add()
+{
+	std::cout << "add\n";
+}
+
+void	Phonebook::search()
+{
+	std::cout << "search\n";
+}
+
+void	Phonebook::exit()
+{
+	std::cout << "exit\n";
 }

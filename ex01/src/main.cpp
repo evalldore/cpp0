@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 17:51:07 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/16 17:51:08 by evallee-         ###   ########.fr       */
+/*   Created: 2023/11/16 17:35:29 by evallee-          #+#    #+#             */
+/*   Updated: 2023/11/16 17:49:41 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#include "phonebook.hpp"
 
-int	main(int argc, char **argv)
+int	main(void)
 {
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;
-	}
-	argv++;
-	while (*argv)
-	{
-		std::string arg = *argv;
-		std::transform(arg.begin(), arg.end(), arg.begin(), toupper);
-		std::cout << arg;
-		argv++;
-	}
-	putchar('\n');
-	return (0);
+	Phonebook *book = new Phonebook();
+	
+	book->add();
+	book->exit();
+	book->search();
+
+	delete book;
 }
