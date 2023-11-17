@@ -6,7 +6,7 @@
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:35:29 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/17 15:02:09 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 15:17:59 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 static void add(Phonebook &book)
 {
-	(void)book;
 	std::string	first_name;
 	std::string	second_name;
 	std::string	nick_name;
