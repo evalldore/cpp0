@@ -6,7 +6,7 @@
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:35:29 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/17 13:17:54 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 15:02:09 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,29 @@ static void add(Phonebook &book)
 		std::cout << "Invalid parameters for contact!" << std::endl;
 }
 
+static bool is_number(const std::string &s)
+{
+	return !s.empty() && std::all_of(s.begin(), s.end(), isdigit);
+}
+
 static void search(Phonebook &book)
 {
+	std::string index_str;
+	uint8_t		index;
+
 	book.display();
+	std::cout << "Enter contact index > ";
+	std::getline(std::cin, index_str);
+	if (!is_number(index_str))
+	{
+		std::cout << "Index must be a number!" << std::endl;
+		return ;
+	}
+	index = uint8_t(std::stoi(index_str));
+	if (index <= MAX_CONTACTS)
+		book.search(index - 1);
+	else
+		std::cout << "Index invalid (must be 1-8)!" << std::endl;
 }
 
 static bool	command(Phonebook &book, std::string &input)

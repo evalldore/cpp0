@@ -6,7 +6,7 @@
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:28:41 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/17 14:19:21 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 15:10:59 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@
 
 Phonebook::Phonebook()
 {
-	std::cout << "constructor" << std::endl;
-	_index = 0;
-	memset(&_list, 0, sizeof(_list));
+	std::cout << "phone book constructor" << std::endl;
 }
 
 Phonebook::~Phonebook()
 {
-	std::cout << "destructor" << std::endl;
+	std::cout << "phone book destructor" << std::endl;
 }
 
 void	Phonebook::add(const std::string &first, const std::string &second, const std::string &nick, const std::string &phone, const std::string &secret)
@@ -66,7 +64,10 @@ void	Phonebook::display()
 	}
 }
 
-void	Phonebook::search()
+void	Phonebook::search(uint8_t index)
 {
-	std::cout << "search" << std::endl;
+	Contact list_cont;
+	
+	list_cont = _list[index];
+	_list[index].Print();
 }
