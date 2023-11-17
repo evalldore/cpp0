@@ -6,7 +6,7 @@
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:13:54 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/17 12:32:38 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:55:56 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ class Contact
 		_dark_secret(secret) {};
 		~Contact() {};
 
-		std::string Get_FirstName() {return (_first_name);};
-		std::string Get_SecondName() {return (_second_name);};
-		std::string Get_NickName() {return (_nick_name);};
-		std::string Get_PhoneNumber() {return (_phone_number);};
-		std::string Get_DarkSecret() {return (_dark_secret);};
+		std::string Get_FirstName() const {return (_first_name);};
+		std::string Get_SecondName() const {return (_second_name);};
+		std::string Get_NickName() const {return (_nick_name);};
+		std::string Get_PhoneNumber() const {return (_phone_number);};
+		std::string Get_DarkSecret() const {return (_dark_secret);};
 
 		void Set_FirstName(const std::string &str) {_first_name = str;};
 		void Set_SecondName(const std::string &str) {_second_name = str;};

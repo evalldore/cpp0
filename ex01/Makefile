@@ -1,5 +1,5 @@
 NAME			:= phonebook
-CPPFLAGS		:= -Wall -Wextra -Werror -std=c++98
+CPPFLAGS		:= -Wall -Wextra -Werror -std=c++98 -g
 SRCS			:= main.cpp phonebook.cpp contact.cpp
 INCDIR			:= include/
 BINDIR			:= bin/

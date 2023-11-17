@@ -6,7 +6,7 @@
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:28:41 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/17 12:31:31 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 14:19:21 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,44 @@ Phonebook::~Phonebook()
 	std::cout << "destructor" << std::endl;
 }
 
-void	Phonebook::add(Contact &cont)
+void	Phonebook::add(const std::string &first, const std::string &second, const std::string &nick, const std::string &phone, const std::string &secret)
 {
-	std::cout << "add" << std::endl;
-
-	_list[_index].Set_FirstName(cont.Get_FirstName());
-	_list[_index].Set_SecondName(cont.Get_SecondName());
-	_list[_index].Set_NickName(cont.Get_NickName());
-	_list[_index].Set_PhoneNumber(cont.Get_PhoneNumber());
-	_list[_index].Set_DarkSecret(cont.Get_DarkSecret());
+	_list[_index].Set_FirstName(first);
+	_list[_index].Set_SecondName(second);
+	_list[_index].Set_NickName(nick);
+	_list[_index].Set_PhoneNumber(phone);
+	_list[_index].Set_DarkSecret(secret);
 	_index++;
 	if (_index >= MAX_CONTACTS)
 		_index = 0;
+}
+
+static std::string truncate(const std::string str)
+{
+	if (str.length() <= COLLUMN_WIDTH)
+		return str;
+	return str.substr(0, COLLUMN_WIDTH - 3) + "...";
+}
+
+void	Phonebook::display()
+{
+	Contact list_cont;
+	uint8_t	i;
+
+	i = 0;
+	std::cout << std::setw(COLLUMN_WIDTH) << std::left << "Index" << " | "
+			<< std::setw(COLLUMN_WIDTH) << std::left << "Name" << " | "
+			<< std::setw(COLLUMN_WIDTH) << std::left << "Last Name" << " | "
+			<< std::setw(COLLUMN_WIDTH) << std::left << "Nick Name" << std::endl;
+	while (i < MAX_CONTACTS)
+	{
+		list_cont = _list[i];
+		std::cout << std::setw(COLLUMN_WIDTH) << std::left << std::to_string(i + 1) << " | "
+			<< std::setw(COLLUMN_WIDTH) << std::left << truncate(list_cont.Get_FirstName()) << " | "
+			<< std::setw(COLLUMN_WIDTH) << std::left << truncate(list_cont.Get_SecondName()) << " | "
+			<< std::setw(COLLUMN_WIDTH) << std::left << truncate(list_cont.Get_NickName()) << std::endl;
+		i++;
+	}
 }
 
 void	Phonebook::search()

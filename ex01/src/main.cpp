@@ -6,7 +6,7 @@
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:35:29 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/17 12:37:04 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 13:17:54 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,14 @@ static void add(Phonebook &book)
 	std::getline(std::cin, dark_secret);
 
 	if (!first_name.empty() && !second_name.empty() && !nick_name.empty() && !phone_number.empty() && !dark_secret.empty())
-	{
-		Contact cont(first_name, second_name, nick_name, phone_number, dark_secret);
-		book.add(cont);
-	}
+		book.add(first_name, second_name, nick_name, phone_number, dark_secret);
+	else
+		std::cout << "Invalid parameters for contact!" << std::endl;
 }
 
 static void search(Phonebook &book)
 {
-	(void)book;
+	book.display();
 }
 
 static bool	command(Phonebook &book, std::string &input)

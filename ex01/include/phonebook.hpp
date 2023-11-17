@@ -6,21 +6,25 @@
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:13:06 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/17 12:32:57 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 13:17:03 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include <iomanip>
 #include "contact.hpp"
 #define MAX_CONTACTS 8
+#define COLLUMN_WIDTH 10
 
 class Phonebook
 {
 	public:
 		Phonebook();
 		~Phonebook();
-		void add(Contact &cont);
-		void search();
+
+		void	add(const std::string &first, const std::string &second, const std::string &nick, const std::string &phone, const std::string &secret);
+		void	search();
+		void	display();
 	private:
 		Contact _list[MAX_CONTACTS];
 		uint8_t	_index;
