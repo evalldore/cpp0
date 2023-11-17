@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: niceguy <niceguy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:13:06 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/17 15:10:55 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 18:25:08 by niceguy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iomanip>
+#include <stdint.h>
 #include "contact.hpp"
 #define MAX_CONTACTS 8
 #define COLLUMN_WIDTH 10

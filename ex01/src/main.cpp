@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: niceguy <niceguy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:35:29 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/17 15:17:59 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 18:36:13 by niceguy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits>
+#include <cstdlib>
 #include "phonebook.hpp"
 
 static void add(Phonebook &book)
@@ -42,9 +43,14 @@ static void add(Phonebook &book)
 		std::cout << "Invalid parameters for contact!" << std::endl;
 }
 
-static bool is_number(const std::string &s)
-{
-	return !s.empty() && std::all_of(s.begin(), s.end(), isdigit);
+static bool is_number(const std::string& str) {
+	size_t	i;
+
+	for (i = 0; i < str.length(); ++i) {
+		if (!isdigit(str[i]))
+			return false;
+	}
+	return true;
 }
 
 static void search(Phonebook &book)
@@ -60,7 +66,7 @@ static void search(Phonebook &book)
 		std::cout << "Index must be a number!" << std::endl;
 		return ;
 	}
-	index = uint8_t(std::stoi(index_str));
+	index = uint8_t(atoi(index_str.c_str()));
 	if (index <= MAX_CONTACTS)
 		book.search(index - 1);
 	else

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: niceguy <niceguy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:28:41 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/17 15:10:59 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 18:39:12 by niceguy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 Phonebook::Phonebook()
 {
 	std::cout << "phone book constructor" << std::endl;
+	_index = 0;
 }
 
 Phonebook::~Phonebook()
@@ -56,7 +57,7 @@ void	Phonebook::display()
 	while (i < MAX_CONTACTS)
 	{
 		list_cont = _list[i];
-		std::cout << std::setw(COLLUMN_WIDTH) << std::left << std::to_string(i + 1) << " | "
+		std::cout << std::setw(COLLUMN_WIDTH) << std::left << (i + 1) << " | "
 			<< std::setw(COLLUMN_WIDTH) << std::left << truncate(list_cont.Get_FirstName()) << " | "
 			<< std::setw(COLLUMN_WIDTH) << std::left << truncate(list_cont.Get_SecondName()) << " | "
 			<< std::setw(COLLUMN_WIDTH) << std::left << truncate(list_cont.Get_NickName()) << std::endl;
