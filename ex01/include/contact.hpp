@@ -6,13 +6,13 @@
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:13:54 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/17 11:46:37 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:32:38 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_H
-# include <iostream>
-# include <cstring>
+#pragma once
+#include <iostream>
+#include <cstring>
 
 class Contact
 {
@@ -26,6 +26,17 @@ class Contact
 		_dark_secret(secret) {};
 		~Contact() {};
 
+		std::string Get_FirstName() {return (_first_name);};
+		std::string Get_SecondName() {return (_second_name);};
+		std::string Get_NickName() {return (_nick_name);};
+		std::string Get_PhoneNumber() {return (_phone_number);};
+		std::string Get_DarkSecret() {return (_dark_secret);};
+
+		void Set_FirstName(const std::string &str) {_first_name = str;};
+		void Set_SecondName(const std::string &str) {_second_name = str;};
+		void Set_NickName(const std::string &str) {_nick_name = str;};
+		void Set_PhoneNumber(const std::string &str) {_phone_number = str;};
+		void Set_DarkSecret(const std::string &str) {_dark_secret = str;};
 		void Print(void);
 	private :
 		std::string _first_name;
@@ -34,4 +45,3 @@ class Contact
 		std::string _phone_number;
 		std::string _dark_secret;
 };
-# endif

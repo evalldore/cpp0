@@ -6,7 +6,7 @@
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:35:29 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/17 11:53:28 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:37:04 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,11 @@ static void add(Phonebook &book)
 	std::cout << "Enter deep dark secret > ";
 	std::getline(std::cin, dark_secret);
 
-	Contact cont(first_name, second_name, nick_name, phone_number, dark_secret);
-
-	cont.Print();
+	if (!first_name.empty() && !second_name.empty() && !nick_name.empty() && !phone_number.empty() && !dark_secret.empty())
+	{
+		Contact cont(first_name, second_name, nick_name, phone_number, dark_secret);
+		book.add(cont);
+	}
 }
 
 static void search(Phonebook &book)
