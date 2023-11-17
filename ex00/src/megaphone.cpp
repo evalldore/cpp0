@@ -6,12 +6,13 @@
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:51:07 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/16 17:51:08 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 11:12:10 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstring>
+#include <algorithm>
 
 int	main(int argc, char **argv)
 {

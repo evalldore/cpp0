@@ -6,7 +6,7 @@
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:13:06 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/16 17:53:49 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 11:30:00 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Phonebook
 		~Phonebook();
 		void add();
 		void search();
-		void exit();
+	private:
+		Contact List[MAX_CONTACTS];
 };
 # endif

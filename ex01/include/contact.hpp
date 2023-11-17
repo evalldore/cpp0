@@ -6,7 +6,7 @@
 /*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:13:54 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/16 18:05:21 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/17 11:46:37 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,21 @@
 class Contact
 {
 	public:
-		Contact(const std::string &name): name(name) {};
-		~Contact();
+		Contact() {};
+		Contact(const std::string &first, const std::string &second, const std::string &nick, const std::string &phone, const std::string &secret): 
+		_first_name(first),
+		_second_name(second),
+		_nick_name(nick),
+		_phone_number(phone),
+		_dark_secret(secret) {};
+		~Contact() {};
+
+		void Print(void);
 	private :
-		std::string name;
+		std::string _first_name;
+		std::string _second_name;
+		std::string _nick_name;
+		std::string _phone_number;
+		std::string _dark_secret;
 };
 # endif
