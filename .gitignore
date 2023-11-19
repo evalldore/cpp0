@@ -1,5 +1,8 @@
 **/bin/
 **.vscode
 megaphone
+account
+phonebook
 .DS_Store
 .gitignore
+**.log
