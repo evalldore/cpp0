@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niceguy <niceguy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:35:29 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/17 18:36:13 by niceguy          ###   ########.fr       */
+/*   Updated: 2023/11/18 22:53:18 by niceguy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits>
 #include <cstdlib>
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
-static void add(Phonebook &book)
+static void add(PhoneBook &book)
 {
 	std::string	first_name;
 	std::string	second_name;
@@ -53,7 +53,7 @@ static bool is_number(const std::string& str) {
 	return true;
 }
 
-static void search(Phonebook &book)
+static void search(PhoneBook &book)
 {
 	std::string index_str;
 	uint8_t		index;
@@ -67,13 +67,13 @@ static void search(Phonebook &book)
 		return ;
 	}
 	index = uint8_t(atoi(index_str.c_str()));
-	if (index <= MAX_CONTACTS)
+	if (index > 0 && index <= MAX_CONTACTS)
 		book.search(index - 1);
 	else
 		std::cout << "Index invalid (must be 1-8)!" << std::endl;
 }
 
-static bool	command(Phonebook &book, std::string &input)
+static bool	command(PhoneBook &book, std::string &input)
 {
 	std::cin.clear();
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -84,13 +84,13 @@ static bool	command(Phonebook &book, std::string &input)
 	else if (input == "EXIT")
 		return (false);
 	else
-		std::cout << input << " is an invalid command" << std::endl;
+		std::cout << input << " is an invalid command!" << std::endl;
 	return (true);
 }
 
 int	main(void)
 {
-	Phonebook	book;
+	PhoneBook	book;
 	std::string	input;
 	
 	while (true)

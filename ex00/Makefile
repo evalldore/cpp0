@@ -1,22 +1,19 @@
 NAME			:= megaphone
 CPPFLAGS		:= -Wall -Wextra -Werror -std=c++98
 SRCS			:= megaphone.cpp
-INCDIR			:= include/
 BINDIR			:= bin/
-SRCDIR			:= src/
 OBJS			:= $(addprefix $(BINDIR), $(SRCS:.cpp=.o))
 RM				:= rm -f
-HEADERS			:= -I ./include
 CC				:= c++
 
 all : $(NAME)
 
 $(BINDIR)%.o : $(SRCDIR)%.cpp
-	@$(CC) -c $(CPPFLAGS) -o $@ $^ $(HEADERS)
+	@$(CC) -c $(CPPFLAGS) -o $@ $^
 
 $(NAME) : $(BINDIR) $(OBJS)
 	@echo $(NAME): Compiling!
-	@$(CC) $(CPPFLAGS) -o $(NAME) $(OBJS) $(HEADERS)
+	@$(CC) $(CPPFLAGS) -o $(NAME) $(OBJS)
 
 $(BINDIR) :
 	@mkdir $(BINDIR)
