@@ -6,7 +6,7 @@
 /*   By: niceguy <niceguy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:28:41 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/20 23:02:55 by niceguy          ###   ########.fr       */
+/*   Updated: 2023/11/21 00:34:20 by niceguy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ PhoneBook::~PhoneBook()
 
 void	PhoneBook::add(const std::string &first, const std::string &second, const std::string &nick, const std::string &phone, const std::string &secret)
 {
-	_list[_index].Set_FirstName(first);
-	_list[_index].Set_SecondName(second);
-	_list[_index].Set_NickName(nick);
-	_list[_index].Set_PhoneNumber(phone);
-	_list[_index].Set_DarkSecret(secret);
+	_list[_index].setFirstName(first);
+	_list[_index].setSecondName(second);
+	_list[_index].setNickName(nick);
+	_list[_index].setPhoneNumber(phone);
+	_list[_index].setDarkSecret(secret);
 	_index++;
 	if (_index >= MAX_CONTACTS)
 		_index = 0;
@@ -56,14 +56,14 @@ void	PhoneBook::display()
 	while (i < MAX_CONTACTS)
 	{
 		std::cout << std::setw(COLLUMN_WIDTH) << std::left << (i + 1) << " | "
-			<< std::setw(COLLUMN_WIDTH) << std::left << truncate(_list[i].Get_FirstName()) << " | "
-			<< std::setw(COLLUMN_WIDTH) << std::left << truncate(_list[i].Get_SecondName()) << " | "
-			<< std::setw(COLLUMN_WIDTH) << std::left << truncate(_list[i].Get_NickName()) << std::endl;
+			<< std::setw(COLLUMN_WIDTH) << std::left << truncate(_list[i].getFirstName()) << " | "
+			<< std::setw(COLLUMN_WIDTH) << std::left << truncate(_list[i].getSecondName()) << " | "
+			<< std::setw(COLLUMN_WIDTH) << std::left << truncate(_list[i].getNickName()) << std::endl;
 		i++;
 	}
 }
 
 void	PhoneBook::search(uint8_t index)
 {
-	_list[index].Print();
+	_list[index].print();
 }

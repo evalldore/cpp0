@@ -6,7 +6,7 @@
 /*   By: niceguy <niceguy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:13:54 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/18 22:38:19 by niceguy          ###   ########.fr       */
+/*   Updated: 2023/11/21 00:34:16 by niceguy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@
 class Contact
 {
 	public:
-		Contact();
-		~Contact();
+		Contact(void);
+		~Contact(void);
 
-		std::string Get_FirstName() const {return (_firstName);};
-		std::string Get_SecondName() const {return (_secondName);};
-		std::string Get_NickName() const {return (_nickName);};
-		std::string Get_PhoneNumber() const {return (_phoneNumber);};
-		std::string Get_DarkSecret() const {return (_darkSecret);};
+		std::string getFirstName() const;
+		std::string getSecondName() const;
+		std::string getNickName() const;
+		std::string getPhoneNumber() const;
+		std::string getDarkSecret() const;
 
-		void Set_FirstName(const std::string &str) {_firstName = str;};
-		void Set_SecondName(const std::string &str) {_secondName = str;};
-		void Set_NickName(const std::string &str) {_nickName = str;};
-		void Set_PhoneNumber(const std::string &str) {_phoneNumber = str;};
-		void Set_DarkSecret(const std::string &str) {_darkSecret = str;};
-		void Print(void);
+		void setFirstName(const std::string &str);
+		void setSecondName(const std::string &str);
+		void setNickName(const std::string &str);
+		void setPhoneNumber(const std::string &str);
+		void setDarkSecret(const std::string &str);
+		void print(void) const;
 	private :
 		std::string _firstName;
 		std::string _secondName;
