@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niceguy <niceguy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 11:13:36 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/21 00:34:18 by niceguy          ###   ########.fr       */
+/*   Updated: 2023/11/21 14:03:40 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ Contact::~Contact(void)
 
 void	Contact::print(void) const
 {
-	std::cout << std::left << _firstName << std::endl
-			<< std::left << _secondName << std::endl
-			<< std::left << _nickName << std::endl
-			<< std::left << _phoneNumber << std::endl
-			<< std::left << _darkSecret << std::endl;
+	std::cout << "First name: " << _firstName << std::endl;
+	std::cout << "Second name: " << _secondName << std::endl;
+	std::cout << "Nick name: " << _nickName << std::endl;
+	std::cout << "Phone number: " << _phoneNumber << std::endl;
+	std::cout << "Dark secret: " << _darkSecret << std::endl;
 }
 
 std::string Contact::getFirstName() const {return (_firstName);};
