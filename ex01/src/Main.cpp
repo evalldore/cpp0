@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: niceguy <niceguy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:35:29 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/20 17:35:31 by evallee-         ###   ########.fr       */
+/*   Updated: 2023/11/20 22:38:46 by niceguy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,9 @@ static void add(PhoneBook &book)
 }
 
 static bool is_number(const std::string& str) {
-	size_t	i;
-
-	for (i = 0; i < str.length(); ++i) {
-		if (!isdigit(str[i]))
-			return false;
-	}
+	if (!str[0]) return false;
+	for (size_t i = 0; i < str.length(); ++i)
+		if (!isdigit(str[i])) return false;
 	return true;
 }
 
